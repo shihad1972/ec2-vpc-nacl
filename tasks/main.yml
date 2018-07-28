@@ -1,0 +1,4 @@
+---
+# tasks file for ec2-vpc-nacl
+- include_tasks: get-vpc-info.yml
+- include_tasks: nacl.yml

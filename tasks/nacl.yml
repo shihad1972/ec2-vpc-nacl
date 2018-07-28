@@ -1,0 +1,14 @@
+---
+
+- name: Create the NACL's
+  ec2_vpc_nacl:
+    vpc_id: "{{ vpc_id }}"
+    name: "{{ item.name }}"
+    region: "{{ region }}"
+    subnets: "{{ item.subnets }}"
+    tags:
+      VPC: "{{ vpc_name }}"
+      Name: "{{ item.name }}"
+    ingress: "{{ item.ingress }}"
+    egress: "{{ item.egress }}"
+  with_items: "{{ vpc_nacls }}"
