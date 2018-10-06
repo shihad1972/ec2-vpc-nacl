@@ -12,3 +12,5 @@
     ingress: "{{ item.ingress }}"
     egress: "{{ item.egress }}"
   with_items: "{{ vpc_nacls }}"
+  loop_control:
+    label: "{{ item.name }}"
